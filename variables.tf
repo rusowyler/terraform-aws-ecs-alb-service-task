@@ -588,3 +588,12 @@ variable "track_latest" {
   description = "Whether should track latest task definition or the one created with the resource."
   default     = false
 }
+
+variable "ecs_service_name" {
+  type        = list(string)
+  description = <<-EOT
+    If list is not empty, use the first element as the name of the ECS service. 
+    Otherwise a name will be generated.
+    EOT
+  default     = []
+}
